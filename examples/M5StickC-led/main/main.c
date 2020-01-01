@@ -22,13 +22,8 @@
 #define MODEL_NAME  "M5StickC"
 #define ARRAY_SIZE(array) (sizeof(array) / sizeof(array[0]))
 
-#if 1
-#define EXAMPLE_ESP_WIFI_SSID "aterm-20d92f-g"
-#define EXAMPLE_ESP_WIFI_PASS "398b11c67de82"
-#else
 #define EXAMPLE_ESP_WIFI_SSID "mywifi"
 #define EXAMPLE_ESP_WIFI_PASS "mypassword"
-#endif
 
 static gpio_num_t LED_PORT = GPIO_NUM_10;
 
@@ -124,7 +119,7 @@ static esp_err_t event_handler(void *ctx, system_event_t *event)
             sprintf(accessory_id, "%02X:%02X:%02X:%02X:%02X:%02X", mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
             hap_accessory_callback_t callback;
             callback.hap_object_init = hap_object_init;
-            a = hap_accessory_register((char*)ACCESSORY_NAME, accessory_id, (char*)"053-58-197", (char*)MANUFACTURER_NAME, HAP_ACCESSORY_CATEGORY_OTHER, 811, 1, NULL, &callback);
+            a = hap_accessory_register((char*)ACCESSORY_NAME, accessory_id, (char*)"111-22-333", (char*)MANUFACTURER_NAME, HAP_ACCESSORY_CATEGORY_OTHER, 811, 1, NULL, &callback);
         }
         break;
     case SYSTEM_EVENT_STA_DISCONNECTED:
